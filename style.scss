@@ -1,0 +1,31 @@
+//  Calculator design
+
+// I'll base it on my iphone calculator
+
+// needs to be a grid with 4 columns
+// 5 equal sized rows, plus a double height row
+// at the top for the display (which may be a flexbox)
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: black;
+}
+
+.calculator {
+  &__display {
+    display: flex;
+    height: 25%;
+  }
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
