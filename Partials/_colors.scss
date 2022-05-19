@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+.color {
+  &__orange {
+    background-color: $color-orange;
+  }
+
+  &__pale-grey {
+    background-color: $color-pale-grey;
+    color: black;
+  }
+
+  &__dark-grey {
+    background-color: $color-dark-grey;
+  }
+}

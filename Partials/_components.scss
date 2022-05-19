@@ -1,0 +1,14 @@
+@use "./variables" as *;
+
+button {
+  border: none;
+  font-family: inherit;
+  font-size: 2rem;
+  display: block;
+  cursor: pointer;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  text-align: center;
+  color: $color-white;
+}

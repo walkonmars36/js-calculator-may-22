@@ -6,26 +6,66 @@
 // 5 equal sized rows, plus a double height row
 // at the top for the display (which may be a flexbox)
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@use "./Partials/colors";
+@use "./Partials/reset";
+@use "./Partials/components";
+@use "./Partials/variables" as *;
 
 body {
   height: 100vh;
-  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculator {
+  height: 90vh;
+  background-color: black;
+  border-radius: 0.6rem;
+
   &__display {
     display: flex;
-    height: 25%;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    height: 20%;
+    color: white;
+    font-size: 5rem;
+    padding-right: 0.45em;
+    border-radius: 7px;
   }
 
-  &__inputs {
+  &__keys {
     display: grid;
+
+    margin: 3rem 0;
+    padding: 0 1em;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    // margin-top: 3rem;
+    justify-items: center;
+    gap: 0.75rem;
+
+    &--clear {
+      grid-column: span 2;
+      border-radius: 20px;
+      width: 100%;
+    }
+
+    &--number-0 {
+      grid-column: span 2;
+      width: 100%;
+      border-radius: 20px;
+      text-align: left;
+      padding-left: 1.1em;
+    }
+
+    &--decimal-point {
+      grid-area: 5 / 3;
+    }
+
+    &--equals {
+      grid-area: 5 / 4;
+    }
   }
 }

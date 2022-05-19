@@ -1,20 +1,79 @@
+.color__orange {
+  background-color: #ff9500;
+}
+.color__pale-grey {
+  background-color: #dcdcdc;
+  color: black;
+}
+.color__dark-grey {
+  background-color: #303030;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  height: 100vh;
-  background-color: black;
+button {
+  border: none;
+  font-family: inherit;
+  font-size: 2rem;
+  display: block;
+  cursor: pointer;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  height: 90vh;
+  background-color: black;
+  border-radius: 0.6rem;
+}
 .calculator__display {
   display: flex;
-  height: 25%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 20%;
+  color: white;
+  font-size: 5rem;
+  padding-right: 0.45em;
+  border-radius: 7px;
 }
-.calculator__inputs {
+.calculator__keys {
   display: grid;
+  margin: 3rem 0;
+  padding: 0 1em;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  justify-items: center;
+  gap: 0.75rem;
+}
+.calculator__keys--clear {
+  grid-column: span 2;
+  border-radius: 20px;
+  width: 100%;
+}
+.calculator__keys--number-0 {
+  grid-column: span 2;
+  width: 100%;
+  border-radius: 20px;
+  text-align: left;
+  padding-left: 1.1em;
+}
+.calculator__keys--decimal-point {
+  grid-area: 5/3;
+}
+.calculator__keys--equals {
+  grid-area: 5/4;
 }/*# sourceMappingURL=style.css.map */
