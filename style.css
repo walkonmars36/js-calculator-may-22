@@ -1,3 +1,11 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .color__orange {
   background-color: #ff9500;
 }
@@ -28,16 +36,7 @@ button {
   color: white;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .calculator {
-  height: 90vh;
   background-color: black;
   border-radius: 0.6rem;
 }
@@ -45,7 +44,6 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 20%;
   color: white;
   font-size: 5rem;
   padding-right: 0.45em;
