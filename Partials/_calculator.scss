@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .calculator {
   background-color: black;
   border-radius: 0.6rem;
@@ -5,11 +7,12 @@
   &__display {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    flex-wrap: wrap;
 
-    color: white;
+    color: $color-white;
     font-size: 5rem;
     padding-right: 0.45em;
+    padding-top: 0.5em;
     border-radius: 7px;
   }
 
@@ -18,7 +21,6 @@
     margin: 3rem 0;
     padding: 0 1em;
     grid-template-columns: repeat(4, 1fr);
-    // margin-top: 3rem;
     justify-items: center;
     gap: 0.75rem;
 
