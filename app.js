@@ -1,13 +1,3 @@
-/*
-    Need to have initial values set and stored in variables
-*/
-let displayInitialVal = "0";
-let previousValue = "";
-let newValue = "";
-let resultValue = "";
-let operator = "";
-let decimalClicked = false;
-
 ////////////// QUERY SELECTORS ///////////////////////
 
 // all number btns
@@ -22,53 +12,106 @@ const clearBtn = document.querySelector("[data-clear]");
 // equals btn
 const equalsBtn = document.querySelector("[data-equals]");
 
+// delete btn
+const deleteBtn = document.querySelector("[data-delete");
+
 /////////////////////
 
 ///////////////////// DISPLAY //////////////////////////
-const display = document.querySelector(".calculator__display");
+const output = document.querySelector(".calculator__output--current-value");
+const previousOutput = document.querySelector(".calculator__output--previous-value");
 
-let displayedNum = (display.innerText = displayInitialVal);
+///////////////////////////////////////////////////////
 
+//  Initial values set and stored in variables
+
+let displayInitialVal = "0";
+let currentValue = "";
+let previousValue = "";
+let resultValue = "";
+let operation = undefined;
+let decimalClicked = false;
+output.innerText = displayInitialVal;
+previousOutput.innerText = "";
 ///////////////////// FUNCTIONS ////////////////////////
 
-// number button function -
+// CLEAR FUNCTION
+const clearBtnClicked = () => {
+  previousValue = "";
+  currentValue = "";
+  resultValue = "";
+  operation = "";
+  decimalClicked = false;
+  output.innerText = displayInitialVal;
+  previousOutput.innerText = "";
+};
 
+// ADD NUMBER FUNCTION
 const numBtnClicked = (num) => {
   const number = num.target.value;
 
-  if (resultValue) {
-    newValue = number;
-  } else if (number === ".") {
-    if (decimalClicked != true) {
-      newValue += number;
-      decimalClicked = true;
-    }
-  } else {
-    newValue += number;
-  }
-  display.textContent = newValue;
-  console.log(newValue);
+  if (number === "." && currentValue.includes(".")) return;
+  currentValue += number;
+  console.log(currentValue);
+  output.innerText = currentValue;
 };
 
-// operator button function
+// DELETE FUNCTION
+// const deleteBtnClicked = (currentValue) => {
+//   currentValue = currentValue.slice(0, -1);
+// };
 
-const operatorBtnClicked = (e) => {};
+// OPERATOR FUNCTION
+const operatorBtnClicked = (operator) => {
+  if (currentValue === "") return;
+  operation = operator.target.value;
+  previousValue = currentValue;
+  currentValue = "";
 
-// clear button function
+  previousOutput.innerText += `${previousValue}  ${operation}`;
+  output.innerText = currentValue;
+};
 
-const clearBtnClicked = () => {
+// EQUALS (computation) FUNCTION
+const equalsBtnClicked = () => {
+  floatPrevValue = parseFloat(previousValue);
+  floatCurrentValue = parseFloat(currentValue);
+  if (isNaN(floatPrevValue) || isNaN(floatCurrentValue)) return;
+
+  switch (operation) {
+    case "/":
+      resultValue = floatPrevValue / floatCurrentValue;
+      break;
+    case "x":
+      resultValue = floatPrevValue * floatCurrentValue;
+      break;
+    case "-":
+      resultValue = floatPrevValue - floatCurrentValue;
+      break;
+    case "+":
+      resultValue = floatPrevValue + floatCurrentValue;
+      break;
+    default:
+      return;
+  }
+
+  currentValue = resultValue;
+  operation = undefined;
   previousValue = "";
-  newValue = "";
-  resultValue = "";
-  operator = "";
-  decimalClicked = false;
-  displayedNum = display.innerText = displayInitialVal;
+
+  output.innerText = resultValue;
+  previousOutput.innerText = "";
 };
 
 ///////////////////// EVENT LISTENERS /////////////////////////////////////////
+
+// number btns
 numberBtns.forEach((number) => number.addEventListener("click", numBtnClicked));
+//  clear btn
 clearBtn.addEventListener("click", clearBtnClicked);
-
-equalsBtn.addEventListener("click", operatorBtnClicked);
-
+// equals btn
+equalsBtn.addEventListener("click", equalsBtnClicked);
+// operator btns
 operatorBtn.forEach((operator) => operator.addEventListener("click", operatorBtnClicked));
+// delete btn
+deleteBtn.addEventListener("click", deleteBtnClicked);

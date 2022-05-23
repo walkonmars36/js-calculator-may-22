@@ -10,26 +10,31 @@
   </head>
   <body>
     <div class="calculator">
-      <div class="calculator__display"></div>
+      <div class="calculator__output">
+        <div class="calculator__output--previous-value"></div>
+        <div class="calculator__output--current-value"></div>
+      </div>
+
       <div class="calculator__keys">
         <!-- ROW 1 -->
         <button class="calculator__keys--clear color__pale-grey" value="clear" data-clear>AC</button>
-        <button class="calculator__keys--percent color__pale-grey" value="percent" data-operation>%</button> <button class="calculator__keys--divide color__orange" value="divide" data-operation>÷</button>
+        <button class="calculator__keys--percent color__pale-grey" value="delete" data-delete>Del</button>
+        <button class="calculator__keys--delete color__orange" value="/" data-operation>÷</button>
         <!-- ROW 2 -->
         <button class="calculator__keys--number-7 color__dark-grey" value="7" data-number>7</button>
         <button class="calculator__keys--number-8 color__dark-grey" value="8" data-number>8</button>
         <button class="calculator__keys--number-9 color__dark-grey" value="9" data-number>9</button>
-        <button class="calculator__keys--multiply color__orange" value="multiply" data-operation>x</button>
+        <button class="calculator__keys--multiply color__orange" value="x" data-operation>x</button>
         <!-- ROW 3 -->
         <button class="calculator__keys--number-4 color__dark-grey" value="4" data-number>4</button>
         <button class="calculator__keys--number-5 color__dark-grey" value="5" data-number>5</button>
         <button class="calculator__keys--number-6 color__dark-grey" value="6" data-number>6</button>
-        <button class="calculator__keys--minus color__orange" value="minus" data-operation>-</button>
+        <button class="calculator__keys--minus color__orange" value="-" data-operation>-</button>
         <!-- ROW 4 -->
         <button class="calculator__keys--number-1 color__dark-grey" value="1" data-number>1</button>
         <button class="calculator__keys--number-2 color__dark-grey" value="2" data-number>2</button>
         <button class="calculator__keys--number-3 color__dark-grey" value="3" data-number>3</button>
-        <button class="calculator__keys--plus color__orange" value="plus" data-operation>+</button>
+        <button class="calculator__keys--plus color__orange" value="+" data-operation>+</button>
         <!-- ROW 5 -->
         <button class="calculator__keys--number-0 color__dark-grey" value="0" data-number>0</button>
         <button class="calculator__keys--decimal-point color__dark-grey" value="." data-number>.</button>

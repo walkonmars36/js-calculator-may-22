@@ -41,16 +41,22 @@ button {
 .calculator {
   background-color: black;
   border-radius: 0.6rem;
+  padding: 2em;
 }
-.calculator__display {
+.calculator__output {
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgba(48, 48, 48, 0.5);
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0.5em;
+  min-height: 15rem;
   color: white;
   font-size: 5rem;
-  padding-right: 0.45em;
-  padding-top: 0.5em;
   border-radius: 7px;
+}
+.calculator__output--previous-value {
+  font-size: 2rem;
 }
 .calculator__keys {
   display: grid;
