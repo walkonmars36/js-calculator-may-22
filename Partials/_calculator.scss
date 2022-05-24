@@ -4,6 +4,7 @@
   background-color: black;
   border-radius: 0.6rem;
   // min-height: 90vh;
+
   padding: 2em;
 
   &__output {
@@ -30,6 +31,7 @@
 
   &__keys {
     display: grid;
+
     margin: 3rem 0;
     padding: 0 1em;
     grid-template-columns: repeat(4, 1fr);

@@ -52,13 +52,13 @@ const numBtnClicked = (num) => {
 
   if (number === "." && currentValue.includes(".")) return;
   currentValue += number;
-  console.log(currentValue);
+
   output.innerText = currentValue;
 };
 
 // DELETE FUNCTION
-// const deleteBtnClicked = (currentValue) => {
-//   currentValue = currentValue.slice(0, -1);
+// const deleteBtnClicked = (e) => {
+//   .slice(0, -1);
 // };
 
 // OPERATOR FUNCTION
