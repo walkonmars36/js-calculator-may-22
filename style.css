@@ -41,6 +41,7 @@ button {
   background-color: black;
   border-radius: 0.6rem;
   padding: 2em;
+  margin-top: 1rem;
 }
 .calculator__output {
   display: flex;
