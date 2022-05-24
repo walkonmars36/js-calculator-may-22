@@ -1,0 +1,5 @@
+@mixin container($width: 95%, $max-width: 25rem) {
+  width: $width;
+  margin: 0 auto;
+  max-width: $max-width;
+}

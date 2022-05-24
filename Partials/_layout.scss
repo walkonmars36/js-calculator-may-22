@@ -1,10 +1,12 @@
 @use "./fonts" as *;
+@use "./mixins" as *;
 
 body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include container;
+  display: grid;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   font-family: "Roboto", sans-serif;
 }

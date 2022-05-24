@@ -1,10 +1,9 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 .calculator {
   background-color: black;
   border-radius: 0.6rem;
-  // min-height: 90vh;
-
   padding: 2em;
 
   &__output {
@@ -14,13 +13,11 @@
     justify-content: space-around;
     align-items: flex-end;
 
-    padding: 0.5em;
-    min-height: 15rem;
+    padding: 0.3em;
+    min-height: 13rem;
 
     color: $color-white;
     font-size: 5rem;
-    // padding-right: 0.45em;
-    // padding-top: 0.5em;
 
     border-radius: 7px;
 
@@ -31,9 +28,9 @@
 
   &__keys {
     display: grid;
-
+    @include container;
     margin: 3rem 0;
-    padding: 0 1em;
+    // padding: 0 1em;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     gap: 0.75rem;
