@@ -13,7 +13,7 @@ const clearBtn = document.querySelector("[data-clear]");
 const equalsBtn = document.querySelector("[data-equals]");
 
 // delete btn
-const deleteBtn = document.querySelector("[data-delete");
+// const deleteBtn = document.querySelector("[data-delete");
 
 /////////////////////
 
@@ -37,10 +37,10 @@ previousOutput.innerText = "";
 
 // CLEAR FUNCTION
 const clearBtnClicked = () => {
-  previousValue = "";
   currentValue = "";
+  previousValue = "";
   resultValue = "";
-  operation = "";
+  operation = undefined;
   decimalClicked = false;
   output.innerText = displayInitialVal;
   previousOutput.innerText = "";
@@ -54,12 +54,10 @@ const numBtnClicked = (num) => {
   currentValue += number;
 
   output.innerText = currentValue;
+  console.log(typeof currentValue);
 };
 
 // DELETE FUNCTION
-// const deleteBtnClicked = (e) => {
-//   .slice(0, -1);
-// };
 
 // OPERATOR FUNCTION
 const operatorBtnClicked = (operator) => {
@@ -70,6 +68,7 @@ const operatorBtnClicked = (operator) => {
 
   previousOutput.innerText += `${previousValue}  ${operation}`;
   output.innerText = currentValue;
+  console.log(typeof previousValue);
 };
 
 // EQUALS (computation) FUNCTION
@@ -77,6 +76,9 @@ const equalsBtnClicked = () => {
   floatPrevValue = parseFloat(previousValue);
   floatCurrentValue = parseFloat(currentValue);
   if (isNaN(floatPrevValue) || isNaN(floatCurrentValue)) return;
+
+  console.log(floatCurrentValue);
+  console.log(floatPrevValue);
 
   switch (operation) {
     case "/":
@@ -114,4 +116,4 @@ equalsBtn.addEventListener("click", equalsBtnClicked);
 // operator btns
 operatorBtn.forEach((operator) => operator.addEventListener("click", operatorBtnClicked));
 // delete btn
-deleteBtn.addEventListener("click", deleteBtnClicked);
+// deleteBtn.addEventListener("click", deleteBtnClicked);
