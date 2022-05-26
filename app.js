@@ -54,7 +54,6 @@ const numBtnClicked = (num) => {
   currentValue += number;
 
   output.innerText = currentValue;
-  console.log(typeof currentValue);
 };
 
 // DELETE FUNCTION
@@ -68,7 +67,6 @@ const operatorBtnClicked = (operator) => {
 
   previousOutput.innerText += `${previousValue}  ${operation}`;
   output.innerText = currentValue;
-  console.log(typeof previousValue);
 };
 
 // EQUALS (computation) FUNCTION
@@ -76,9 +74,6 @@ const equalsBtnClicked = () => {
   floatPrevValue = parseFloat(previousValue);
   floatCurrentValue = parseFloat(currentValue);
   if (isNaN(floatPrevValue) || isNaN(floatCurrentValue)) return;
-
-  console.log(floatCurrentValue);
-  console.log(floatPrevValue);
 
   switch (operation) {
     case "/":
